@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Script"
-include ':app'
+//include ':app'
 include ':memory'
