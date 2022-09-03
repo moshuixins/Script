@@ -1,4 +1,4 @@
-![logo](https://docsify.js.org/_media/icon.svg ':size=10%')
+![logo](https://docsify.js.org/_media/icon.svg':size=10%')
 
 # Script <small>2.18</small>
 
