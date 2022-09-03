@@ -1,4 +1,4 @@
-![logo](/img/icon.svg':size=10%')
+![logo](img/icon.svg':size=10%')
 
 # Script <small>2.18</small>
 
