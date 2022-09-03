@@ -371,11 +371,11 @@ public class MemoryTools {
         return receiver.getIPC();
     }
 
-    public final boolean init(Context ctx, boolean isRoot) {
+    public final boolean init(Context context, boolean isRoot) {
         root = isRoot;
         if (isRoot) {
             if (RootShell.isAccessGiven(5 * 1000, 3)) {
-                createIpc(ctx);
+                createIpc(context);
                 return true;
             }
             return false;
