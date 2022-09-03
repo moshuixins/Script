@@ -237,7 +237,7 @@ public class MemoryTools {
                 }
             }
         } else {
-           return MemoryToolsNative.getResultsCount();
+            return MemoryToolsNative.getResultsCount();
         }
         return 0;
     }
@@ -328,7 +328,7 @@ public class MemoryTools {
         }
     }
 
-    public void startFreeze(int pid) throws RemoteException {
+    public void startFreeze() throws RemoteException {
         if (root) {
             synchronized (lock) {
                 if (!ipcList.isEmpty()) {
