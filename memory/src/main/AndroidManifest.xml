@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.moshuixin.memory">
+<!--
+    <application>
+        <receiver android:name="com.">
+                        <intent-filter android:priority="100">
+                             <action android:name="cn.bgxt.Broadcastdemo.Basic.broadcast"/>
+                        </intent-filter>
+                    </receiver>
+    </application>-->
+</manifest>
