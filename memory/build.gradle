@@ -52,6 +52,4 @@ android {
 }
 
 dependencies {
-    implementation project(":root-shell")
-    implementation project(":app_process")
 }
