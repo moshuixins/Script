@@ -19,9 +19,8 @@ afterEvaluate {
 }
 android {
     compileSdk 32
-
     defaultConfig {
-        minSdk 23
+        minSdk 21
         targetSdk 32
 
         externalNativeBuild {
@@ -42,11 +41,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    ndkVersion '24.0.8215888'
+    ndkVersion '25.1.8937393'
     externalNativeBuild {
         cmake {
             path file('src/main/cpp/CMakeLists.txt')
-            version '3.18.1'
+            version '3.22.1'
         }
     }
 }

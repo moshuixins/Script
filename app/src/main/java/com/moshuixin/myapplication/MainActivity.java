@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MemoryTools.getInstance().init(this, false);
+        MemoryTools.getInstance().init(this, true);
         TextView text = (TextView) findViewById(R.id.text1);
         Button button = (Button) findViewById(R.id.button);
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             try {
 //                var app = MemoryTools.getInstance().getResults(0, MemoryTools.getInstance().getResultsCount());
 //                var a=app.get(0).addr;
-                MemoryTools.getInstance().selectAppByPackage("com.moshuixin.myapplication");
+                MemoryTools.getInstance().selectAppByPackage("gg.pointers");
                 MemoryTools.getInstance().setRange(2);
                 MemoryTools.getInstance().searchMemory("123", 0);
                 MemoryTools.getInstance().getResults(0,1);
