@@ -4,14 +4,14 @@ plugins {
     id 'maven-publish'
 }
 group = 'com.github.moshuixins'
-version = '2.0'
+version = '2.12'
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
                 groupId = 'com.github.moshuixins'
                 artifactId = 'Script'
-                version = '2.0'
+                version = '2.12'
                 from components.release
             }
         }
