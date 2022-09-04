@@ -1,6 +1,6 @@
 ![logo](img/icon.svg)
 
-# Script <small>2.18</small>
+# Script <small>2.19</small>
 
 > 一个功能强大的脚本库。
 

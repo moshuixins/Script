@@ -20,7 +20,7 @@ Step 2.
 
 ```java
 dependencies {
-        implementation 'com.github.moshuixins:Script:2.18'
+        implementation 'com.github.moshuixins:Script:2.19'
 }
 ```
 
