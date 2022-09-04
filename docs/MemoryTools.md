@@ -136,7 +136,7 @@ import com.moshuixin.memory.tools.*;
 * `address` {long} 地址
 * `type` {int} 数据类型
 
-* 返回 {String} 值
+* 返回 {Object} 值
 
 返回指定地址的指定类型的值。
 
