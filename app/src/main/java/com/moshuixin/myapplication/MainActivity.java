@@ -7,11 +7,11 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
-
+import java.util.Base64;
 import com.google.android.material.textfield.TextInputEditText;
 
 import com.moshuixin.memory.tools.*;
-
+import com.moshuixin.util.*;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,14 +23,15 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(v -> {
-            try {
-                MemoryTools.getInstance().selectAppByPackage("gg.pointers");
-                long add = MemoryTools.getInstance().getModuleBase("libgame.so") + 0x12008;
-                long a = (long) MemoryTools.getInstance().getMemory(add, 5);
-                printIn(Long.toHexString(a));
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                MemoryTools.getInstance().selectAppByPackage("gg.pointers");
+//                long add = MemoryTools.getInstance().getModuleBase("libgame.so") + 0x12008;
+//                long a = (long) MemoryTools.getInstance().getMemory(add, 5);
+//                printIn(Long.toHexString(a));
+                printIn(crypto.digest("123","MD5","Base64"));
+//            } catch (RemoteException e) {
+//                e.printStackTrace();
+//            }
         });
     }
 
