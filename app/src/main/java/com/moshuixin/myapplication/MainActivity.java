@@ -24,25 +24,22 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(v -> {
             try {
-//                var app = MemoryTools.getInstance().getResults(0, MemoryTools.getInstance().getResultsCount());
-//                var a=app.get(0).addr;
                 MemoryTools.getInstance().selectAppByPackage("gg.pointers");
-                MemoryTools.getInstance().setRange(2);
-                MemoryTools.getInstance().searchMemory("123", 0);
-                MemoryTools.getInstance().getResults(0,1);
-                printIn(String.valueOf(MemoryTools.getInstance().getResultsCount()));
+                long add = MemoryTools.getInstance().getModuleBase("libgame.so") + 0x12008;
+                long a = (long) MemoryTools.getInstance().getMemory(add, 5);
+                printIn(Long.toHexString(a));
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
         });
     }
 
-    public static void log(String msg){
-        Log.e(MainActivity.class.getName(),msg);
+    public static void log(String msg) {
+        Log.e(MainActivity.class.getName(), msg);
     }
 
-    public void printIn(String a){
-        TextInputEditText b=(TextInputEditText) findViewById(R.id.edit1);
+    public void printIn(String a) {
+        TextInputEditText b = (TextInputEditText) findViewById(R.id.edit1);
         b.setText(b.getText() + "\n" + a);
     }
 }

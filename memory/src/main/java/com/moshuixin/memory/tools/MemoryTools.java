@@ -191,6 +191,19 @@ public class MemoryTools {
         return 0;
     }
 
+    public long getModuleBase(String name) throws RemoteException {
+        if (root) {
+            synchronized (lock) {
+                if (!ipcList.isEmpty()) {
+                    return getIpc().getModuleBase(SelectPid, name, 1);
+                }
+            }
+        } else {
+            return MemoryToolsNative.getModuleBase(SelectPid, name, 1);
+        }
+        return 0;
+    }
+
     public void searchMemory(String value, int type) throws RemoteException {
         if (root) {
             synchronized (lock) {
@@ -267,17 +280,30 @@ public class MemoryTools {
         }
     }
 
-    public String getMemory(long address, int type) throws RemoteException {
+    public Object getMemory(long address, int type) throws RemoteException {
+        String memory = "";
         if (root) {
             synchronized (lock) {
                 if (!ipcList.isEmpty()) {
-                    return getIpc().getMemory(SelectPid, address, type);
+                    memory = getIpc().getMemory(SelectPid, address, type);
                 }
             }
         } else {
-            return MemoryToolsNative.getMemory(SelectPid, address, type);
+            memory = MemoryToolsNative.getMemory(SelectPid, address, type);
         }
-        return null;
+        switch (type){
+            case 0:
+            case 3:
+            case 4:
+                return Integer.parseInt(memory);
+            case 1:
+                return Float.parseFloat(memory);
+            case 2:
+                return Double.parseDouble(memory);
+            case 5:
+                return Long.parseLong(memory);
+        }
+        return memory;
     }
 
     public void setMemory(String value, long address, int type) throws RemoteException {
